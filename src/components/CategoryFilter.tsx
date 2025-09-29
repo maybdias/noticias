@@ -18,19 +18,19 @@ const categories = [
 
 export default function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryFilterProps) {
   return (
-    <div className="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
+    <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-4">
+        <div className="py-6">
           <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => onCategoryChange(category.id)}
-                className={`flex-shrink-0 px-4 py-2 rounded-full font-medium text-sm transition-all duration-200
-                           transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300
+                className={`flex-shrink-0 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200
+                           transform hover:scale-105 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300
                            ${selectedCategory === category.id
-                             ? 'bg-blue-600 text-white shadow-lg'
-                             : `${category.color} hover:shadow-md`
+                             ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg border-2 border-blue-600'
+                             : `${category.color} hover:shadow-lg border border-gray-200`
                            }`}
               >
                 {category.name}

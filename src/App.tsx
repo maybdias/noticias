@@ -57,29 +57,20 @@ function App() {
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats */}
+        {/* Header Section */}
         {!loading && !error && articles.length > 0 && (
-          <div className="mb-8">
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                    Últimas Notícias
-                  </h2>
-                  <p className="text-gray-600">
-                    {articles.length} notícias encontradas
-                    {searchQuery && ` para "${searchQuery}"`}
-                  </p>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">
-                    {articles.length}
-                  </div>
-                  <div className="text-sm text-blue-500">
-                    Artigos
-                  </div>
-                </div>
-              </div>
+          <div className="mb-12">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                Últimas Notícias
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full mb-6"></div>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                {searchQuery ? 
+                  `Resultados da busca por "${searchQuery}"` :
+                  'Fique por dentro das principais notícias do momento'
+                }
+              </p>
             </div>
           </div>
         )}
@@ -93,20 +84,23 @@ function App() {
 
         {!loading && !error && articles.length === 0 && (
           <div className="text-center py-20">
-            <div className="text-gray-500 text-lg mb-4">
-              Nenhuma notícia encontrada
+            <div className="bg-white rounded-2xl shadow-lg p-12 max-w-md mx-auto">
+              <div className="text-6xl mb-6">📰</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Nenhuma notícia encontrada
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {searchQuery ? 
+                  `Não encontramos resultados para "${searchQuery}". Tente outros termos de busca.` :
+                  'Não há notícias disponíveis no momento. Tente novamente mais tarde.'
+                }
+              </p>
             </div>
-            <p className="text-gray-400">
-              {searchQuery ? 
-                `Não encontramos resultados para "${searchQuery}". Tente outros termos.` :
-                'Não há notícias disponíveis no momento.'
-              }
-            </p>
           </div>
         )}
 
         {!loading && !error && articles.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {articles.map((article, index) => (
               <NewsCard key={`${article.url}-${index}`} article={article} />
             ))}
@@ -115,17 +109,20 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-16">
+      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-2">
-              eliz<span className="text-blue-400">IA</span>
-            </h3>
-            <p className="text-gray-400 mb-4">
-              Seu portal de notícias em tempo real
-            </p>
-            <div className="border-t border-gray-800 pt-4">
-              <p className="text-sm text-gray-500">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold mb-3">
+                eliz<span className="text-blue-400">IA</span>
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full mb-4"></div>
+              <p className="text-gray-300 text-lg">
+                Seu portal de notícias em tempo real
+              </p>
+            </div>
+            <div className="border-t border-gray-700 pt-8">
+              <p className="text-gray-400">
                 © 2025 elizIA. Desenvolvido com React e Tailwind CSS.
               </p>
             </div>
