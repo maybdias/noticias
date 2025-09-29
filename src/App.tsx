@@ -123,7 +123,7 @@ function App() {
             </div>
             <div className="border-t border-gray-700 pt-8">
               <p className="text-gray-400">
-                © 2025 elizIA. Desenvolvido com React e Tailwind CSS.
+                © 2025 elizIA. 
               </p>
             </div>
           </div>

@@ -21,7 +21,7 @@ export default function CategoryFilter({ selectedCategory, onCategoryChange }: C
     <div className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-6">
-          <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
+          <div className="flex justify-center space-x-2 overflow-x-auto scrollbar-hide">
             {categories.map((category) => (
               <button
                 key={category.id}

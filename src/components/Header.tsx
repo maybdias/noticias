@@ -1,5 +1,5 @@
 import React from 'react';
-import { Newspaper, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 interface HeaderProps {
   searchQuery: string;
@@ -20,9 +20,11 @@ export default function Header({ searchQuery, setSearchQuery, onSearch }: Header
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2">
-              <Newspaper className="h-8 w-8 text-blue-100" />
-            </div>
+            <img 
+              src="/robot (1).png" 
+              alt="elizIA Logo" 
+              className="h-12 w-12 rounded-xl object-cover"
+            />
             <div>
               <h1 className="text-2xl font-bold text-white tracking-tight">
                 eliz<span className="text-blue-200">IA</span>
