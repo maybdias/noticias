@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search } from 'lucide-react';
+import AccessibilityControls from './AccessibilityControls';
 
 interface HeaderProps {
   searchQuery: string;
@@ -54,14 +55,18 @@ export default function Header({ searchQuery, setSearchQuery, onSearch }: Header
           </div>
 
           {/* Action Button */}
-          <button
-            onClick={onSearch}
-            className="bg-blue-500 hover:bg-blue-400 text-white font-medium px-6 py-3 rounded-xl
-                     transition-all duration-200 transform hover:scale-105 hover:shadow-lg
-                     focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-blue-800"
-          >
-            Buscar
-          </button>
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={onSearch}
+              className="bg-blue-500 hover:bg-blue-400 text-white font-medium px-6 py-3 rounded-xl
+                       transition-all duration-200 transform hover:scale-105 hover:shadow-lg
+                       focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-blue-800"
+            >
+              Buscar
+            </button>
+            
+            <AccessibilityControls />
+          </div>
         </div>
       </div>
     </header>
