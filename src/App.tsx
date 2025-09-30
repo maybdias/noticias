@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{backgroundColor: '#E8F0F8'}}>
       <Header 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -61,11 +61,11 @@ function App() {
         {!loading && !error && articles.length > 0 && (
           <div className="mb-12">
             <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold mb-4" style={{color: '#2D5B7A'}}>
                 Últimas Notícias
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full mb-6"></div>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <div className="w-24 h-1 mx-auto rounded-full mb-6" style={{background: 'linear-gradient(to right, #548BC5, #2D5B7A)'}}></div>
+              <p className="text-xl max-w-2xl mx-auto" style={{color: '#2D5B7A'}}>
                 {searchQuery ? 
                   `Resultados da busca por "${searchQuery}"` :
                   'Fique por dentro das principais notícias do momento'
@@ -86,10 +86,10 @@ function App() {
           <div className="text-center py-20">
             <div className="bg-white rounded-2xl shadow-lg p-12 max-w-md mx-auto">
               <div className="text-6xl mb-6">📰</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold mb-4" style={{color: '#2D5B7A'}}>
                 Nenhuma notícia encontrada
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed" style={{color: '#2D5B7A'}}>
                 {searchQuery ? 
                   `Não encontramos resultados para "${searchQuery}". Tente outros termos de busca.` :
                   'Não há notícias disponíveis no momento. Tente novamente mais tarde.'
@@ -109,20 +109,20 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16">
+      <footer className="py-16" style={{background: 'linear-gradient(to right, #2D5B7A, #548BC5, #2D5B7A)', color: '#FFFFFF'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-8">
               <h3 className="text-3xl font-bold mb-3">
-                eliz<span className="text-blue-400">IA</span>
+                eliz<span style={{color: '#4a8ee8'}}>IA</span>
               </h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full mb-4"></div>
-              <p className="text-gray-300 text-lg">
+              <div className="w-16 h-1 mx-auto rounded-full mb-4" style={{background: 'linear-gradient(to right, #B9D0E9, #E8F0F8)'}}></div>
+              <p className="text-lg" style={{color: '#B9D0E9'}}>
                 Seu portal de notícias em tempo real
               </p>
             </div>
-            <div className="border-t border-gray-700 pt-8">
-              <p className="text-gray-400">
+            <div className="border-t pt-8" style={{borderColor: '#548BC5'}}>
+              <p style={{color: '#B9D0E9'}}>
                 © 2025 elizIA. 
               </p>
             </div>

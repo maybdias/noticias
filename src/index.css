@@ -23,7 +23,8 @@
 
 /* Melhorar foco para acessibilidade */
 *:focus {
-  outline: 3px solid #3b82f6 !important;
+  outline: 3px solid #66a5c0 !important;
+  outline: 3px solid  !important; 
   outline-offset: 2px !important;
 }
 

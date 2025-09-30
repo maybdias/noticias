@@ -100,9 +100,20 @@ export default function AccessibilityControls({ className = '' }: AccessibilityC
       {/* Botão principal de acessibilidade */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl transition-all duration-200 
+        className="text-white p-3 rounded-xl transition-all duration-200 
                  transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 
                  focus:ring-offset-2 focus:ring-offset-blue-800 shadow-lg"
+        style={{
+          backgroundColor: '#5a9ef0'
+        }}
+        onMouseEnter={(e) => {
+          const target = e.target as HTMLButtonElement;
+          target.style.backgroundColor = '#4a8ee8';
+        }}
+        onMouseLeave={(e) => {
+          const target = e.target as HTMLButtonElement;
+          target.style.backgroundColor = '#5a9ef0';
+        }}
         title="Opções de Acessibilidade"
         aria-label="Abrir menu de acessibilidade"
       >
